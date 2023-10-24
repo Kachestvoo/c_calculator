@@ -235,6 +235,109 @@ int main()
 
             printf("enter from 1 to 5 ");
         }
+        else if (i == 4)
+        {
+            double a11, a12, a13, a21, a22, a23, a31, a32, a33;
+            matrix();
+            while (i != 0)
+            {
+                scanf("%d", &i);
+                printf("\n");
+                if (i == 11)
+                {
+                    printf("a11, a12 ");
+                    scanf("%lf %lf", &a11, &a12);
+                    printf("a21, a22 ");
+                    scanf("%lf %lf", &a21, &a22);
+                    printf("result %.2lf\n", a11 * a22 - a12 * a21);
+                    // a11 a12      a11 a21
+                    // a21 a22      a12 a22
+                    continue;
+                }
+                if (i == 12)
+                {
+                    printf("a11, a12 ");
+                    scanf("%lf %lf", &a11, &a12);
+                    printf("a21, a22 ");
+                    scanf("%lf %lf", &a21, &a22);
+                    printf("result\n\n%.2lf %.2lf\n%.2lf %.2lf\n", a11, a21, a12, a22);
+
+                    continue;
+                }
+                if (i == 13)
+                {
+                    printf("a11, a12 ");
+                    scanf("%lf %lf", &a11, &a12);
+                    printf("a21, a22 ");
+                    scanf("%lf %lf", &a21, &a22);
+                    if (a11 * a22 != a12 * a21)
+                        printf("result\n\n%.2lf %.2lf\n%.2lf %.2lf\n", a22, (-1) * a12, (-1) * a21, a11);
+                    else
+                        printf("det = 0");
+
+                    continue;
+                }
+                if (i == 21)
+                {
+                    printf("a11, a12, a13 ");
+                    scanf("%lf %lf %lf", &a11, &a12, &a13);
+                    printf("a21, a22, a23 ");
+                    scanf("%lf %lf %lf", &a21, &a22, &a23);
+                    printf("a31, a32, a33 ");
+                    scanf("%lf %lf %lf", &a31, &a32, &a33);
+                    printf("result %.2lf\n", (a11 * a22 * a33) + (a21 * a32 * a13) + (a12 * a23 * a31) - (a13 * a22 * a31) - (a32 * a23 * a11) - (a21 * a12 * a33));
+
+                    continue;
+                }
+                if (i == 22)
+                {
+                    printf("a11, a12, a13 ");
+                    scanf("%lf %lf %lf", &a11, &a12, &a13);
+                    printf("a21, a22, a23 ");
+                    scanf("%lf %lf %lf", &a21, &a22, &a23);
+                    printf("a31, a32, a33 ");
+                    scanf("%lf %lf %lf", &a31, &a32, &a33);
+                    printf("\nresult\n\n%.2lf %.2lf %.2lf\n%.2lf %.2lf %.2lf\n%.2lf %.2lf %.2lf\n", a11, a21, a31, a12, a22, a32, a13, a23, a33);
+
+                    continue;
+                }
+                if (i == 23)
+                {
+                    double A11, A12, A13, A21, A22, A23, A31, A32, A33, det;
+                    printf("a11, a12, a13 ");
+                    scanf("%lf %lf %lf", &a11, &a12, &a13);
+                    printf("a21, a22, a23 ");
+                    scanf("%lf %lf %lf", &a21, &a22, &a23);
+                    printf("a31, a32, a33 ");
+                    scanf("%lf %lf %lf", &a31, &a32, &a33);
+                    det = (a11 * a22 * a33) + (a21 * a32 * a13) + (a12 * a23 * a31) - (a13 * a22 * a31) - (a32 * a23 * a11) - (a21 * a12 * a33);
+                    // a11 a12 a13      a11 a21 a31
+                    // a21 a22 a23      a12 a22 a32
+                    // a31 a32 a33      a13 a23 a33
+                    if (det != 0)
+                    {
+                        A11 = (a22 * a33 - a23 * a32) / det;
+                        A12 = ((-1) * (a21 * a33 - a23 * a31)) / det;
+                        A13 = (a21 * a32 - a22 * a31) / det;
+                        A21 = ((-1) * (a12 * a33 - a13 * a32)) / det;
+                        A22 = (a11 * a33 - a13 * a31) / det;
+                        A23 = ((-1) * (a11 * a32 - a12 * a31)) / det;
+                        A31 = (a12 * a23 - a13 * a22) / det;
+                        A32 = ((-1) * (a11 * a23 - a13 * a21)) / det;
+                        A33 = (a11 * a22 - a12 * a21) / det;
+                        printf("\nresult\n%.2lf %.2lf %.2lf\n%.2lf %.2lf %.2lf\n%.2lf %.2lf %.2lf \n", A11, A21, A31, A12, A22, A32, A13, A23, A33);
+                    }
+                    else
+                        printf("det = 0\n");
+
+                    continue;
+                }
+            }
+            i = -1;
+            interface();
+            printf("\n");
+            printf("enter from 1 to 5 ");
+        }
 
             }
             i = -1;
