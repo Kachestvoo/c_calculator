@@ -250,9 +250,8 @@ int main()
                     printf("a21, a22 ");
                     scanf("%lf %lf", &a21, &a22);
                     printf("result %.2lf\n", a11 * a22 - a12 * a21);
-                    // a11 a12      a11 a21
-                    // a21 a22      a12 a22
-                    continue;
+                    
+		    continue;
                 }
                 if (i == 12)
                 {
