@@ -298,5 +298,58 @@ int main()
             printf("\n");
             printf("enter from 1 to 5 ");
         }    
+        else if (i == 5)
+        {
+            geometry();
+            while (i != 0)
+            {
+                scanf("%d", &i);
+                printf("\n");
+                if (i == 1)
+                {
+                    double a, b, c, p;
+                    printf("a, b, c ");
+                    scanf("%lf %lf %lf", &a, &b, &c);
+                    if (a + b > c && a + c > b && b + c > a && a > 0 && b > 0 && c > 0)
+                    {
+                        p = (a + b + c) / 2;
+                        printf("result %.2lf\n", sqrt(p * (p - a) * (p - b) * (p - c)));
+
+                        continue;
+                    }
+                    else
+                    {
+                        printf("ERROR");
+                        continue;
+                    }
+                }
+                if (i == 2)
+                {
+                    double conts = 1.3333333333 * 3.1415926535897, x = 0;
+                    printf("input r ");
+                    scanf("%lf", &x);
+                    if (x < 0)
+                        x = x * (-1);
+                    printf("result %.2lf\n", conts * x * x * x);
+
+                    continue;
+                }
+                if (i == 3)
+                {
+                    printf("input r ");
+                    scanf("%lf", &x);
+                    if (x < 0)
+                        x = -1 * x;
+                    printf("result %.2lf\n", M_PI * x * x);
+
+                    continue;
+                }
+            }
+            i = -1;
+            interface();
+            printf("\n");
+
+            printf("enter from 1 to 5 ");
+        }
     }
 }
