@@ -265,5 +265,38 @@ int main()
 
             printf("enter from 1 to 5 ");
         }
+        else if (i == 2)
+        {
+            double a = 0, b = 0, c = 0;
+            printf("x ? \n");
+            printf("a ");
+            scanf("%lf", &a);
+            printf("b ");
+            scanf("%lf", &b);
+            printf("c ");
+            scanf("%lf", &c);
+            if ((b * b - 4 * a * c) < 0){
+                printf("no x \n");
+                printf("enter 0 for go back or 1 - 5 description ");
+            }
+            else if ((b * b - 4 * a * c) == 0)
+            {
+                printf("result %.2lf\n", ((-b) / 2 * a));
+                printf("enter 0 for go back or 1 - 5 description ");
+            }
+            else
+            {
+                printf("result1 %.2lf\n", ((-b + pow(b * b - 4 * a * c, 1 / 2)) / 2 * a));
+                printf("result2 %.2lf\n", ((-b - pow(b * b - 4 * a * c, 1 / 2)) / 2 * a));
+                printf("enter 0 for go back or 1 - 5 description ");
+            }
+
+            continue;
+
+            i = -1;
+            interface();
+            printf("\n");
+            printf("enter from 1 to 5 ");
+        }    
     }
 }
