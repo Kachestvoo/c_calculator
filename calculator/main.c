@@ -15,7 +15,7 @@ int interface()
     printf("| 2 |  x ? |  y = a * x*x + b * x + c   |\n");
     printf("|___|______\\___________________________/|\n");
     printf("|   |      /          \\/       \\/      \\|\n");
-    printf("| 3 | trig | sin/cosx ||  tgx  || ctgx ||\n");
+    printf("| 3 | trig | sin/cosx ||  tgx  ||  arc ||\n");
     printf("|___|______\\__________/\\_______/\\______/|\n");
     printf("|   |                                   |\n");
     printf("| 4 |             Matrix                |\n");
@@ -164,7 +164,149 @@ int main()
     {
         scanf("%d", &i);
 
+        if (i == 1)
+        {
+            math();
+            printf("\nenter from 0 to 6 ");
+            while (i != 0)
+            {
+                scanf("%d", &i);
+                printf("\n");
+                if (i == 1)
+                { // x + y
+                    printf("input x ");
+                    scanf("%lf", &x);
+                    printf("input y ");
+                    scanf("%lf", &y);
+                    printf("result %.2lf\n", x + y);
+                    printf("enter 0 for go back or input new operatation ");
+
+                    continue;
+                }
+                else if (i == 2)
+                { // x - y
+                    printf("input x ");
+                    scanf("%lf", &x);
+                    printf("input y ");
+                    scanf("%lf", &y);
+                    printf("result %.2f\n", x - y);
+                    printf("enter 0 for go back or input new operatation ");
+
+                    continue;
+                }
+                else if (i == 3)
+                { // x * y
+                    printf("input x ");
+                    scanf("%lf", &x);
+                    printf("input y ");
+                    scanf("%lf", &y);
+                    printf("result %.2f\n", x * y);
+                    printf("enter 0 for go back or input new operatation ");
+
+                    continue;
+                }
+                else if (i == 4)
+                { // x / y
+                    printf("input x ");
+                    scanf("%lf", &x);
+                    printf("input y ");
+                    scanf("%lf", &y);
+                    if (y == 0)
+                    {
+                        printf("error\n");
+                        printf("enter 0 for go back or input new operatation ");
+                        continue;
+                    }
+                    else
+                    {
+                        printf("result %.2f\n", x / y);
+                        printf("enter 0 for go back or input new operatation ");
+                        continue;
+                    }
+                }
+                else if (i == 5)
+                {
+                    printf("input x ");
+                    scanf("%lf", &x);
+                    printf("input y ");
+                    scanf("%lf", &y);
+                    if (y == 0 || (y - (int)y != 0) || (x - (int)x != 0))
+                    {
+                        printf("error\n");
+                        printf("enter 0 for go back or input new operatation ");
+                        continue;
+                    }
+                    else
+                    {
+                        printf("result %d\n", (int)x % (int)y);
+                        printf("enter 0 for go back or input new operatation ");
+                        continue;
+                    }
+                }
+                else if (i == 6)
+                {
+                    printf("input x ");
+                    scanf("%lf", &x);
+                    printf("input y ");
+                    scanf("%lf", &y);
+                    if (x == 0 && y <= 0)
+                    {
+                        printf("error\n");
+                        printf("enter 0 for go back or input new operatation ");
+                        continue;
+                    }
+                    else
+                    {
+                        printf("result %.2f\n", pow(x, y));
+                        printf("enter 0 for go back or input new operatation ");
+
+                        continue;
+                    }
+                }
+
+
+            }
+            i = -1;
+            interface();
+            printf("\n");
+
+            printf("enter from 1 to 5 ");
+        }
+        else if (i == 2)
+        {
+            double a = 0, b = 0, c = 0;
+            printf("x ? \n");
+            printf("a ");
+            scanf("%lf", &a);
+            printf("b ");
+            scanf("%lf", &b);
+            printf("c ");
+            scanf("%lf", &c);
+            if ((b * b - 4 * a * c) < 0){
+                printf("no x \n");
+                printf("enter 0 for go back or 1 - 5 description ");
+            }
+            else if ((b * b - 4 * a * c) == 0)
+            {
+                printf("result %.2lf\n", ((-b) / 2 * a));
+                printf("enter 0 for go back or 1 - 5 description ");
+            }
+            else
+            {
+                printf("result1 %.2lf\n", ((-b + pow(b * b - 4 * a * c, 1 / 2)) / 2 * a));
+                printf("result2 %.2lf\n", ((-b - pow(b * b - 4 * a * c, 1 / 2)) / 2 * a));
+                printf("enter 0 for go back or 1 - 5 description ");
+            }
+
+            continue;
+
+            i = -1;
+            interface();
+            printf("\n");
+            printf("enter from 1 to 5 ");
+        }
         if (i == 3)
+
         { // trigonometry
             trigonometry();
             printf("enter two number for the next action (for example 12) ");
@@ -250,7 +392,7 @@ int main()
                     printf("a21, a22 ");
                     scanf("%lf %lf", &a21, &a22);
                     printf("result %.2lf\n", a11 * a22 - a12 * a21);
-                    
+
 		    continue;
                 }
                 if (i == 12)
@@ -337,11 +479,59 @@ int main()
             printf("\n");
             printf("enter from 1 to 5 ");
         }
+        else if (i == 5)
+        {
+            geometry();
+            while (i != 0)
+            {
+                scanf("%d", &i);
+                printf("\n");
+                if (i == 1)
+                {
+                    double a, b, c, p;
+                    printf("a, b, c ");
+                    scanf("%lf %lf %lf", &a, &b, &c);
+                    if (a + b > c && a + c > b && b + c > a && a > 0 && b > 0 && c > 0)
+                    {
+                        p = (a + b + c) / 2;
+                        printf("result %.2lf\n", sqrt(p * (p - a) * (p - b) * (p - c)));
 
+                        continue;
+                    }
+                    else
+                    {
+                        printf("ERROR");
+                        continue;
+                    }
+                }
+                if (i == 2)
+                {
+                    double conts = 1.3333333333 * 3.1415926535897, x = 0;
+                    printf("input r ");
+                    scanf("%lf", &x);
+                    if (x < 0)
+                        x = x * (-1);
+                    printf("result %.2lf\n", conts * x * x * x);
+
+                    continue;
+                }
+                if (i == 3)
+                {
+                    printf("input r ");
+                    scanf("%lf", &x);
+                    if (x < 0)
+                        x = -1 * x;
+                    printf("result %.2lf\n", M_PI * x * x);
+
+                    continue;
+                }
             }
             i = -1;
             interface();
             printf("\n");
-            printf("enter from 1 to 5 ");
 
+            printf("enter from 1 to 5 ");
+        }
+
+            }
 }
