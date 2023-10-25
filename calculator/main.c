@@ -495,7 +495,6 @@ int main()
                         A33 = (a11 * a22 - a12 * a21) / det;
                         printf("\nresult\n%.2lf %.2lf %.2lf\n%.2lf %.2lf %.2lf\n%.2lf %.2lf %.2lf \n", A11, A21, A31, A12, A22, A32, A13, A23, A33);
                         printf("\n");
-                        printf("enter two numbers for next action (for example 12) ");
                     }
                     else
                         printf("det = 0\n");
@@ -554,6 +553,7 @@ int main()
                     if (x < 0)
                         x = -1 * x;
                     printf("result %.2lf\n", M_PI * x * x);
+                    printf("enter 0 for go back or input new operatation ");
                     continue;
                 }
             }
