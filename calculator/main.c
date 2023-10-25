@@ -395,6 +395,7 @@ int main()
         {
             double a11, a12, a13, a21, a22, a23, a31, a32, a33;
             matrix();
+            printf("enter two numbers for next action (for example 12) ");
             while (i != 0)
             {
                 scanf("%d", &i);
@@ -406,7 +407,8 @@ int main()
                     printf("a21, a22 ");
                     scanf("%lf %lf", &a21, &a22);
                     printf("result %.2lf\n", a11 * a22 - a12 * a21);
-                    
+                    printf("\n");
+                    printf("enter two numbers for next action (for example 12) ");
                     continue;
                 }
                 else if (i == 12)
@@ -416,7 +418,8 @@ int main()
                     printf("a21, a22 ");
                     scanf("%lf %lf", &a21, &a22);
                     printf("result\n\n%.2lf %.2lf\n%.2lf %.2lf\n", a11, a21, a12, a22);
-
+                    printf("\n");
+                    printf("enter two numbers for next action (for example 12) ");
                     continue;
                 }
                 else if (i == 13)
@@ -425,10 +428,18 @@ int main()
                     scanf("%lf %lf", &a11, &a12);
                     printf("a21, a22 ");
                     scanf("%lf %lf", &a21, &a22);
-                    if (a11 * a22 != a12 * a21)
-                        printf("result\n\n%.2lf %.2lf\n%.2lf %.2lf\n", a22, (-1) * a12, (-1) * a21, a11);
-                    else
+                    if (a11 * a22 != a12 * a21){
+                        printf("result\n\n%5.2lf %5.2lf\n%5.2lf %5.2lf\n", a22, (-1) * a12, (-1) * a21, a11);
+                        printf("\n");
+                        printf("enter two numbers for next action (for example 12) ");
+                    }
+
+                    else{
                         printf("det = 0");
+                        printf("\n");
+                        printf("enter two numbers for next action (for example 12) ");
+
+                    }
 
                     continue;
                 }
