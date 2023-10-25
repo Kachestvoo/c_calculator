@@ -305,7 +305,7 @@ int main()
             printf("\n");
             printf("enter from 1 to 5 ");
         }
-        if (i == 3)
+        else if (i == 3)
 
         { // trigonometry
             trigonometry();
@@ -323,7 +323,7 @@ int main()
                     printf("enter two numbers for the next action (for example 12) ");
                     continue;
                 }
-                if (i == 12)
+                else if (i == 12)
                 {
                     printf("enter x ");
                     scanf("%lf", &x);
@@ -332,7 +332,7 @@ int main()
                     printf("enter two numbers for next action (for example 12) ");
                     continue;
                 }
-                if (i == 13)
+                else if (i == 13)
                 {
                     printf("enter x ");
                     scanf("%lf", &x);
@@ -346,23 +346,37 @@ int main()
                     }
                     continue;
                 }
-                if (i == 21){
+                else if (i == 21){
                     printf("enter x ");
                     scanf("%lf", &x);
-                    printf("result %.lf\n", 57.692307692307*asin(x));
+                    if (x >= -1 && x <=1){
+                        printf("result %.lf\n", 57.692307692307*asin(x));
 
-                    printf("enter two numbers for the next action (for example 12) ");
+                        printf("enter two numbers for the next action (for example 12) ");
+                    }
+                    else{
+                        printf("error\n");
+                        printf("enter two numbers for next action (for example 12) ");
+
+                    }
                     continue;
                 }
-                if (i==22){
+                else if (i==22){
                     printf("enter x ");
                     scanf("%lf", &x);
-                    printf("result %.lf\n", 57.692307692307*acos(x));
+                    if (x >= -1 && x <=1){
+                        printf("result %.lf\n", 57.692307692307*acos(x));
 
-                    printf("enter two numbers for next action (for example 12) ");
+                        printf("enter two numbers for next action (for example 12) ");
+                    }
+                    else {
+                        printf("error\n");
+                        printf("enter two numbers for next action (for example 12) ");
+
+                    }
                     continue;
                 }
-                if (i==23){
+                else if (i==23){
                     printf("enter x ");
                     scanf("%lf", &x);
                     printf("result %.lf\n", 57.692307692307*atan(x));
@@ -381,6 +395,7 @@ int main()
         {
             double a11, a12, a13, a21, a22, a23, a31, a32, a33;
             matrix();
+            printf("enter two numbers for next action (for example 12) ");
             while (i != 0)
             {
                 scanf("%d", &i);
@@ -392,33 +407,43 @@ int main()
                     printf("a21, a22 ");
                     scanf("%lf %lf", &a21, &a22);
                     printf("result %.2lf\n", a11 * a22 - a12 * a21);
-
-		    continue;
+                    printf("\n");
+                    printf("enter two numbers for next action (for example 12) ");
+                    continue;
                 }
-                if (i == 12)
+                else if (i == 12)
                 {
                     printf("a11, a12 ");
                     scanf("%lf %lf", &a11, &a12);
                     printf("a21, a22 ");
                     scanf("%lf %lf", &a21, &a22);
                     printf("result\n\n%.2lf %.2lf\n%.2lf %.2lf\n", a11, a21, a12, a22);
-
+                    printf("\n");
+                    printf("enter two numbers for next action (for example 12) ");
                     continue;
                 }
-                if (i == 13)
+                else if (i == 13)
                 {
                     printf("a11, a12 ");
                     scanf("%lf %lf", &a11, &a12);
                     printf("a21, a22 ");
                     scanf("%lf %lf", &a21, &a22);
-                    if (a11 * a22 != a12 * a21)
-                        printf("result\n\n%.2lf %.2lf\n%.2lf %.2lf\n", a22, (-1) * a12, (-1) * a21, a11);
-                    else
+                    if (a11 * a22 != a12 * a21){
+                        printf("result\n\n%5.2lf %5.2lf\n%5.2lf %5.2lf\n", a22, (-1) * a12, (-1) * a21, a11);
+                        printf("\n");
+                        printf("enter two numbers for next action (for example 12) ");
+                    }
+
+                    else{
                         printf("det = 0");
+                        printf("\n");
+                        printf("enter two numbers for next action (for example 12) ");
+
+                    }
 
                     continue;
                 }
-                if (i == 21)
+                else if (i == 21)
                 {
                     printf("a11, a12, a13 ");
                     scanf("%lf %lf %lf", &a11, &a12, &a13);
@@ -427,10 +452,11 @@ int main()
                     printf("a31, a32, a33 ");
                     scanf("%lf %lf %lf", &a31, &a32, &a33);
                     printf("result %.2lf\n", (a11 * a22 * a33) + (a21 * a32 * a13) + (a12 * a23 * a31) - (a13 * a22 * a31) - (a32 * a23 * a11) - (a21 * a12 * a33));
-
+                    printf("\n");
+                    printf("enter two numbers for next action (for example 12) ");
                     continue;
                 }
-                if (i == 22)
+                else if (i == 22)
                 {
                     printf("a11, a12, a13 ");
                     scanf("%lf %lf %lf", &a11, &a12, &a13);
@@ -439,10 +465,11 @@ int main()
                     printf("a31, a32, a33 ");
                     scanf("%lf %lf %lf", &a31, &a32, &a33);
                     printf("\nresult\n\n%.2lf %.2lf %.2lf\n%.2lf %.2lf %.2lf\n%.2lf %.2lf %.2lf\n", a11, a21, a31, a12, a22, a32, a13, a23, a33);
-
+                    printf("\n");
+                    printf("enter two numbers for next action (for example 12) ");
                     continue;
                 }
-                if (i == 23)
+                else if (i == 23)
                 {
                     double A11, A12, A13, A21, A22, A23, A31, A32, A33, det;
                     printf("a11, a12, a13 ");
@@ -467,10 +494,13 @@ int main()
                         A32 = ((-1) * (a11 * a23 - a13 * a21)) / det;
                         A33 = (a11 * a22 - a12 * a21) / det;
                         printf("\nresult\n%.2lf %.2lf %.2lf\n%.2lf %.2lf %.2lf\n%.2lf %.2lf %.2lf \n", A11, A21, A31, A12, A22, A32, A13, A23, A33);
+                        printf("\n");
+                        printf("enter two numbers for next action (for example 12) ");
                     }
                     else
                         printf("det = 0\n");
-
+                        printf("\n");
+                        printf("enter two numbers for next action (for example 12) ");
                     continue;
                 }
             }
@@ -495,16 +525,17 @@ int main()
                     {
                         p = (a + b + c) / 2;
                         printf("result %.2lf\n", sqrt(p * (p - a) * (p - b) * (p - c)));
+                        printf("enter 0 for go back or input new operatation ");
 
                         continue;
                     }
                     else
                     {
-                        printf("ERROR");
+                        printf("ERROR ");
                         continue;
                     }
                 }
-                if (i == 2)
+                else if (i == 2)
                 {
                     double conts = 1.3333333333 * 3.1415926535897, x = 0;
                     printf("input r ");
@@ -512,17 +543,17 @@ int main()
                     if (x < 0)
                         x = x * (-1);
                     printf("result %.2lf\n", conts * x * x * x);
+                    printf("enter 0 for go back or input new operatation ");
 
                     continue;
                 }
-                if (i == 3)
+                else if (i == 3)
                 {
                     printf("input r ");
                     scanf("%lf", &x);
                     if (x < 0)
                         x = -1 * x;
                     printf("result %.2lf\n", M_PI * x * x);
-
                     continue;
                 }
             }
@@ -533,5 +564,5 @@ int main()
             printf("enter from 1 to 5 ");
         }
 
-            }
+    }
 }
